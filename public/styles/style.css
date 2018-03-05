@@ -1,0 +1,110 @@
+.header {  
+    height: 100px;
+    background-color: #5DBCD2;  
+    margin-top: 0px;
+  }
+  
+  
+  .source-input {
+    /*border: 1px #fab solid;*/
+    height: 150px;
+    
+  }
+  
+  /*Sláðu inn texta...*/
+  .source-input label {
+    display: block;
+    clear: left;
+    position: relative;
+    bottom: 35px;
+    left: 130px;
+    font-size: 18px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;	
+  }
+  
+  .main-container {
+    margin: 0;
+  }
+  
+  .translation-container {
+    border-top: 1px solid grey; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 auto;
+    height: 360px;
+    background-color: #F8F8F8;
+  }
+  
+  
+  .result-item {
+    width: 450px;
+    height: 200px;
+    border-radius: 3px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    list-style-type: none;
+    margin: 50px; 
+    background-color: white;
+  }
+
+  .result-item-clicked {
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5),
+          inset 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+  }
+  
+  #textbox {
+    width: 450px;
+    height: 100px;
+    margin: 50px 50px 50px 130px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: helvetica;
+    float: left;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+
+  }
+  
+  input {
+    width: 100px;
+    height: 50px;
+    margin: 50px;
+    border-radius: 4px;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    font-size: 16px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;	
+    background-color: #364D8E;
+    color: white;
+    
+  }
+  
+  input:hover {
+    background-color: #4682B4; /* Green */
+    color: white;
+  }
+  
+  .flex-container {
+    /*border: 2px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    width: 100%;
+    margin: 0 auto;
+    height: 360px;
+  }
+  
+  .header h2 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;	
+    padding: 50px;
+    margin-left: 80px;
+    font-size: 30px;
+  }
