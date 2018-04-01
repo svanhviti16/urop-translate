@@ -2,13 +2,15 @@
     height: 100px;
     background-color: #5DBCD2;  
     margin-top: 0px;
+    order: 0;
   }
   
   
   .source-input {
     /*border: 1px #fab solid;*/
     height: 150px;
-    
+    order: 1;
+
   }
   
   /*Sláðu inn texta...*/
@@ -23,7 +25,8 @@
   }
   
   .main-container {
-    margin: 0;
+    display: flex;
+    flex-direction: column;
   }
   
   .translation-container {
@@ -35,6 +38,7 @@
     margin: 0 auto;
     height: 360px;
     background-color: #F8F8F8;
+    order: 0;
   }
   
   
@@ -87,7 +91,7 @@
   }
   
   input:hover {
-    background-color: #4682B4; /* Green */
+    background-color: #4682B4; 
     color: white;
   }
   
@@ -108,3 +112,16 @@
     margin-left: 80px;
     font-size: 30px;
   }
+
+  .result-item:hover {
+    cursor: pointer;
+    opacity: .5;
+}
+
+#result-google {
+  border: 2px solid blue;
+}
+#result-arni {
+  border: 2px solid red;
+}
+

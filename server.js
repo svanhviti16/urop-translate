@@ -30,6 +30,29 @@ var port = process.env.API_PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// MONGODB VIA MONGOOSE
+var mongoDB = 'mongodb://localhost:27017/translation_results';
+mongoose.Promise = global.Promise;
+mongoose.connect(mongoDB);
+//Get the default connection
+var db = mongoose.connection;
+
+//Bind connection to error event (to get notification of connection errors)
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+var Schema = mongoose.Schema;
+
+var TranslationSchema = new Schema({
+    source: String,
+    google: String,
+    arni: String,
+    chosen: String,
+    date: Date
+});
+
+// Compile model from schema
+var TranslationModel = mongoose.model('TranslationModel', TranslationSchema );
+
 //To prevent errors from Cross Origin Resource Sharing, we will set our headers to allow CORS with middleware like so:
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -47,11 +70,13 @@ router.get('/', function(req, res) {
   res.json({ message: 'API Initialized!'});
 });
 
+// GOOGLE TRANSLATE API
 router.post('/translate', function(req, res) {
   // The text to translate
   const text = req.body.text;
+  console.log(req.body);
   // The target language
-  const target = req.body.target;
+  const target = 'is';
   translate
   .translate(text, target)
   .then(results => {
@@ -59,12 +84,24 @@ router.post('/translate', function(req, res) {
 
     console.log(`Text: ${text}`);
     console.log(`Translation: ${translation}`);
-    res.json({ translation: translation});
+    res.json({ translation: translation });
   })
   .catch(err => {
     console.error('ERROR:', err);
   });
 })
+
+router.post('/rate', function(req, res) {
+  // Create an instance of model SomeModel
+  var newRating = new TranslationModel(req.body);
+  // Save the new model instance, passing a callback
+  newRating.save(function (err) {
+    if (err) return 0;
+  });
+})
+
+
+
 
 //Use our router configuration when we call /api
 app.use('/api', router);
@@ -73,4 +110,7 @@ app.use('/api', router);
 app.listen(port, function() {
   console.log(`api running on port ${port}`);
 });
+
+
+
 

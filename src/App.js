@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import MainContainer from './MainContainer';
+import Header from './Header/Header';
+import MainContainer from './MainContainer/MainContainer';
 
 //import DATA from '../data';
 
