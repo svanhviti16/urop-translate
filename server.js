@@ -9,11 +9,6 @@ const translate = new Translate({
   keyFilename: "./keyfile.json",
 });
 
-
-
-// Translates some text 
-
-
 //first we import our dependencies...
 var express = require('express');
 var mongoose = require('mongoose');
@@ -92,16 +87,14 @@ router.post('/translate', function(req, res) {
 })
 
 router.post('/rate', function(req, res) {
-  // Create an instance of model SomeModel
+  // Create an instance of model 
   var newRating = new TranslationModel(req.body);
   // Save the new model instance, passing a callback
+  console.log('reqbody ' + req.body);
   newRating.save(function (err) {
     if (err) return 0;
   });
 })
-
-
-
 
 //Use our router configuration when we call /api
 app.use('/api', router);

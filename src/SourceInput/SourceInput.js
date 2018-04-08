@@ -9,19 +9,20 @@ export default class SourceInput extends React.Component {
         this.state = {
             value: ""
         };
-
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
     handleChange(e) {
         console.log('handleChange')
         console.log(e.target.value);
         this.setState({value: e.target.value});
+        // handleChange in MainContainer
+        this.props.handleChange(e);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({value: e.target.value});
 
         const form = { text: this.state.value};
 
@@ -41,13 +42,18 @@ export default class SourceInput extends React.Component {
         })
     }
 
+    handleKeyPress = (e) => {
+        if(e.key == 'Enter'){
+            this.handleSubmit(e);
+        }
+    }
+    
     render () {
         return ( 
             <div className='source-input' id="flex-container">
                 <form onSubmit={(e) => { this.handleSubmit(e) }}>
-                    <textarea value={this.state.value} onChange={this.handleChange} className="flex-item-bigger" id='textbox' maxLength='200' autoFocus="autoFocus"/>
+                    <textarea value={this.state.value} onChange={this.handleChange} onKeyPress={this.handleKeyPress} className="flex-item-bigger" id='textbox' placeholder="Sláðu inn texta á ensku hér" maxLength='200' autoFocus="autoFocus"/>
                     <input id="translate-button" className="flex-item-smaller" type="submit" value="Þýða" />
-                    <label >Sláðu inn texta á ensku til að þýða</label>
                 </form>
             </div>
         )

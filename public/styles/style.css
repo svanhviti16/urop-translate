@@ -10,18 +10,6 @@
     /*border: 1px #fab solid;*/
     height: 150px;
     order: 1;
-
-  }
-  
-  /*Sláðu inn texta...*/
-  .source-input label {
-    display: block;
-    clear: left;
-    position: relative;
-    bottom: 35px;
-    left: 130px;
-    font-size: 18px;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;	
   }
   
   .main-container {
