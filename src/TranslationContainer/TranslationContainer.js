@@ -9,11 +9,14 @@ export default class TranslationContainer extends React.Component {
     }
     
     render () {
-        return ( 
-        <div className='translation-container'>
-            <button className="result-item" id="google" type="button" onClick={this.props.handleSelection} style={{order: this.getRandomInt(2)}}>{this.props.googleTranslation}</button>
-            <button className="result-item" id="arni" type="button" onClick={this.props.handleSelection}></button>
-        </div>
+        return (
+            <div> 
+                <div className='translation-container'>
+                    <button className="result-item" id="google" type="button" lang="is-x-mtfrom-en" onClick={this.props.handleSelection} style={{order: this.getRandomInt(2)}}>{this.props.googleTranslation}</button>
+                    <button className="result-item" id="arni" type="button" lang="is-x-mtfrom-en" onClick={this.props.handleSelection}></button>
+                </div>
+                <p id="instructions">Smelltu á þýðinguna sem þér þykir betri til að hjálpa til við að meta gæði vélþýðinganna.</p>
+            </div>
         )
     }
 }

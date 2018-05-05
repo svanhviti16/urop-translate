@@ -38,7 +38,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 var Schema = mongoose.Schema;
 
 var TranslationSchema = new Schema({
-    source: String,
+    source: { type: String, required: 'Required: source' },
     google: String,
     arni: String,
     chosen: String,
@@ -86,16 +86,16 @@ router.post('/translate', function(req, res) {
   });
 })
 
-router.post('/rate', function(req, res) {
-  // Create an instance of model 
-  var newRating = new TranslationModel(req.body);
-  // Save the new model instance, passing a callback
-  console.log('reqbody ' + req.body);
-  newRating.save(function (err) {
-    if (err) return 0;
-  });
-})
-
+  router.post('/rate', function(req, res) {
+    // Create an instance of model 
+    var newRating = new TranslationModel(req.body);
+    // Save the new model instance, passing a callback
+    console.log('reqbody ' + req.body);
+    
+    newRating.save(function (err) {
+      if (err) return 0;
+    });
+  })
 //Use our router configuration when we call /api
 app.use('/api', router);
 

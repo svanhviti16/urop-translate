@@ -47,6 +47,7 @@ export default class MainContainer extends React.Component {
 
         fetch('http://localhost:3001/api/rate', {  
             method: 'POST', 
+        
             body: JSON.stringify(form),
             headers: new Headers({ 'Content-Type': 'application/json' })
             })

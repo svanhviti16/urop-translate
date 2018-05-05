@@ -1,6 +1,6 @@
 {
-  "short_name": "Pizzeria Uno",
-  "name": "Create React App Sample",
+  "short_name": "Translate",
+  "name": "Machine Translation",
   "icons": [
     {
       "src": "favicon.ico",
