@@ -6,11 +6,11 @@ Virkni vefsins er þannig að notandi skrifar eða límir inn texta til þýðin
 
 Vefurinn er skrifaður í React JS og bakendinn í Node.js með staðbundnum MongoDB-gagnagrunni. Til þess að keyra verkið þarf að gera nokkra hluti. 
 
-Til þess að tala við Google Translate API er hér notast við keyfile frá Google Cloud Translation API, og þarf sá sem ætlar að keyra vekrið að afla sér slíks lykils. Þegar hann er fenginn þarf að gera eftirfarandi: 
+Til þess að tala við Google Translate API er hér notast við keyfile frá Google Cloud Translation API, og þarf sá sem ætlar að keyra verkið að afla sér slíks lykils. Þegar hann er fenginn þarf að gera eftirfarandi: 
 
 - Sækja [Node.js](https://nodejs.org/en/). 
 
-- Sækja MongoDB: `npm install mongodb --save`. Keyra svo `mongod`
+- Sækja [MongoDB](https://www.mongodb.com/): `npm install mongodb --save`. Keyra svo `mongod`
 
 - Klóna þetta verk og keyra `npm install`.
 
