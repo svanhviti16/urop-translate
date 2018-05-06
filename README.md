@@ -14,9 +14,9 @@ Til þess að tala við Google Translate API er hér notast við keyfile frá Go
 
 - Klóna þetta verk og keyra `npm install`.
 
-- Keyra upp vefþjóninn með skipuninni `node server.js`
+- Keyra upp vefþjóninn með skipuninni `node server/server.js`
 
-- Keyra `npm start` og þá keyrir vefurinn á `http://localhost:3000/`
+- Keyra `npm start` og þá opnast vefurinn á `http://localhost:3000/`
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
